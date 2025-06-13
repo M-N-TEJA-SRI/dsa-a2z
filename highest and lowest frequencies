@@ -1,0 +1,34 @@
+#include <iostream>
+#include<unordered_map>
+#include<vector>
+#include<climits>
+using namespace std;
+int main() {
+   int n,mini=INT_MAX,maxi=INT_MIN,minnum=-1,maxnum=-1;
+   cin>>n;
+   int a[n],i;
+   vector<int>v;
+   unordered_map<int,int>mp;
+   for(i=0;i<n;i++){
+       cin>>a[i];
+       mp[a[i]]++;
+   }
+   for(auto it:mp){
+      if(it.second>maxi){
+          maxi=it.second;
+          maxnum=it.first;
+      }
+      if(it.second<mini){
+          mini=it.second;
+          minnum=it.first;
+      }
+   }
+   cout<<maxi<<" "<<maxnum<<"\n";
+   cout<<mini<<" "<<minnum<<"\n";
+    return 0;
+}
+output
+4
+2 2 4 1
+2 2
+1 1
