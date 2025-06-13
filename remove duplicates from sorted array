@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int dup(int a[],int n){
+    int i=0,j;
+    for(j=i+1;j<n;j++){
+        if(a[i]!=a[j])
+        swap(a[++i],a[j]);
+    }
+    return i+1;
+}
+int main() {
+   int n;
+   cin>>n;
+   int a[n],i;
+   for(i=0;i<n;i++){
+       cin>>a[i];
+   }
+   cout<<dup(a,n);
+    return 0;
+}
+output
+4
+1 2 2 3
+3
