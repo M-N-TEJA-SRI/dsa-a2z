@@ -1,0 +1,28 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+int main() {
+    int n,k,i,maxi=0,sum=0,l=0,r=0;
+    cin>>n>>k;
+    int a[n];
+    for(i=0;i<n;i++){
+        cin>>a[i];
+    }
+for(r=0;r<n;r++){
+    sum+=a[r];
+    if(sum<=k)
+
+        maxi=max(maxi,r-l+1);
+    
+    else{
+        sum-=a[l];
+    l++;
+    }
+}
+cout<<maxi;
+    return 0;
+}
+output
+5 1
+3 2 1 4 5
+1
