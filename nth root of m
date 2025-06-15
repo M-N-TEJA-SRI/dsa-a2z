@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+// Function to check whether mid^n < m, == m, or > m
+int search(int n, int mid, int m) {
+    long long int pro = 1;
+    for (int i = 0; i < n; i++) {
+        pro *= mid;
+        if (pro > m)
+            return 2;  // mid^n > m
+    }
+    if (pro == m)
+        return 1;  // mid^n == m
+    else
+        return 0;  // mid^n < m
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;  // Fix: take both inputs
+    int l = 1, h = m, mid, ans = -1;
+    while (l <= h) {
+        mid = (l + h) / 2;
+        int x = search(n, mid, m);
+        if (x == 2)
+            h = mid - 1;
+        else if (x == 1) {
+            ans = mid;
+            break;
+        } else
+            l = mid + 1;
+    }
+    cout << ans;
+    return 0;
+}
