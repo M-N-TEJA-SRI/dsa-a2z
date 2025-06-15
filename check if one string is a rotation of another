@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+bool rotation(string s,string t){
+    if(s.length()!=t.length())
+    return false;
+   else{
+       s+=s;
+       return s.find(t)!=string::npos;
+   }   
+}
+int main() {
+   string s,t;
+   cin>>s>>t;
+cout<<rotation(s,t);
+    return 0;
+}
+output
+gge
+egu
+0
