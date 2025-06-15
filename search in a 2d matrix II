@@ -1,0 +1,41 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+bool search(vector<vector<int>>&a,int n,int m,int key){
+    int l=0,h=(n*m)-1,mid,row,col;
+    while(l<=h){
+        mid=(l+h)/2;
+        row=mid/m;
+        col=mid%m;
+        if(a[row][col]==key)
+        return true;
+        if(a[l/m][l%m]==a[row][col]&&a[row][col]==a[h/m][h%m]){
+            l++;
+            h--;
+            continue;
+        }
+        else if(a[row][col]>key)
+        h=mid-1;
+        else
+        l=mid+1;
+    }
+    return false;
+}
+int main() {
+  int n,m,i,j,key;
+  cin>>n>>m>>key;
+vector<vector<int>>a(n,vector<int>(m));
+  for(i=0;i<n;i++){
+      for(j=0;j<m;j++){
+          cin>>a[i][j];
+       }
+  }
+  cout<<search(a,n,m,key);
+    return 0;
+}
+output
+3 4 5
+1 2 3 4
+7 5 5 7
+6 8 9 20
+1
