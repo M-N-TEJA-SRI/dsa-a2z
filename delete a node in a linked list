@@ -1,0 +1,18 @@
+Node* deleteNode(Node* head, int x) {
+        // cdoe here
+        int c=0;
+        Node *p,*temp=head;
+        if(x!=1){
+        while(temp!=NULL && c!=x-1){
+            p=temp;
+            temp=temp->next;
+            c++;
+        }
+        temp=temp->next;
+        p->next=temp;
+        }
+        else
+        head=head->next;
+        return head;
+        
+    }
