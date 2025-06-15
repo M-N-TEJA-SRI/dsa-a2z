@@ -1,0 +1,42 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+int ones(vector<int>&v,int x,int m){
+    int l=0,h=m-1,mid,ans=-1;
+    while(l<=h){
+        mid=(l+h)/2;
+        if(v[mid]>=x){
+            ans=mid;
+            h=mid-1;
+        }
+        else
+        l=mid+1;
+    }
+    if(ans==-1)
+    ans=m;
+    return ans;
+}
+int main() {
+  int n,m,i,j,row=-1,maxi=0,x;
+  cin>>n>>m;
+  int a[n][m];
+  for(i=0;i<n;i++){
+      vector<int>v;
+      for(j=0;j<m;j++){
+          cin>>a[i][j];
+          v.push_back(a[i][j]);
+      }
+      x=m-ones(v,1,m);
+      if(x>maxi){
+          maxi=x;
+          row=i;
+      }
+  }
+  cout<<maxi<<" "<<row;
+    return 0;
+}
+output
+2 4
+0 0 0 1
+1 1 1 1
+4 1
