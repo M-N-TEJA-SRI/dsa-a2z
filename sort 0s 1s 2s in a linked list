@@ -1,0 +1,17 @@
+ Node* segregate(Node* head) {
+        // code here
+        int a[3]={0},i;
+        Node *temp=head,*t=head;
+        while(temp){
+            a[temp->data]++;
+            temp=temp->next;
+        }
+        i=0;
+        for(i=0;i<3;i++){
+            while(a[i]--){
+                t->data=i;
+                t=t->next;
+            }
+        }
+        return head;
+    }
