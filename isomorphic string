@@ -1,0 +1,31 @@
+#include <iostream>
+#include<unordered_map>
+using namespace std;
+bool isomorphic(string s,string t){
+    if(s.length()!=t.length())
+    return false;
+    else{
+        int ah[256]={0},bh[256]={0};
+        int i;
+        for(i=0;i<s.length();i++){
+           if(ah[s[i]]==0&&bh[t[i]]==0){
+               ah[s[i]]=t[i];
+               bh[t[i]]=s[i];
+           } 
+           else if(ah[s[i]]!=t[i]||bh[t[i]]!=s[i])
+           return false;
+        }
+        return true;
+    }
+    return false;
+}
+int main() {
+   string s,t;
+   cin>>s>>t;
+cout<<isomorphic(s,t);
+    return 0;
+}
+output
+egg
+ade
+0
