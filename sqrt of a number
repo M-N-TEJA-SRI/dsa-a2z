@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int n,l,h,mid,ans=-1;
+   cin>>n;
+   l=1,h=n;
+   while(l<=h){
+       mid=(l+h)/2;
+       if(mid*mid<=n){
+           ans=mid;
+           l=mid+1;
+       }
+       else
+       h=mid-1;
+   }
+   cout<<ans;
+
+    return 0;
+}
+output
+9
+3
