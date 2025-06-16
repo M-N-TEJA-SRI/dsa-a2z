@@ -1,0 +1,152 @@
+#include <iostream>
+using namespace std;
+int stack[5],top=-1,length=5;
+void push(int x){
+    if(top+1<length)
+    stack[++top]=x;
+    else
+    cout<<"over flow\n";
+}
+void pop(){
+    if(top==-1)
+    cout<<"underflow\n";
+    else
+    cout<<stack[top--]<<" is the popped element\n";
+}
+void peek(){
+    if(top==-1)
+    cout<<"underflow\n";
+    else
+    cout<<stack[top]<<" is the peek element\n";
+}
+void print(){
+    if(top==-1)
+    cout<<"underflow\n";
+    else{
+        int i;
+        for(i=0;i<=top;i++){
+            cout<<stack[i]<<" ";
+        }
+        cout<<"\n";
+    }
+}
+void isfull(){
+    if(top+1==length)
+    cout<<"full\n";
+    else
+    cout<<"not full\n";
+}
+void isempty(){
+    if(top==-1)
+    cout<<"empty\n";
+    else
+    cout<<"not empty\n";
+}
+int main() {
+   int n=8,x;
+   while(n!=7){
+       cout<<"1-push\n2-pop\n3-peek\n4-isempty\n5-isfull\n6print\n7-exit\n";
+   cout<<"enter choice\n";
+   cin>>n;
+   switch(n){
+       case 1:
+       cout<<"enter value to push\n";
+       cin>>x;
+       push(x);
+       break;
+       case 2:
+       pop();
+       break;
+       case 3:
+       peek();
+       break;
+       case 4:
+       isempty();
+       break;
+       case 5:
+       isfull();
+       break;
+       case 6:
+       print();
+       break;
+       case 7:
+       cout<<"exit\n";
+       break;
+   }
+       
+   }
+
+    return 0;
+}
+output
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+
+1
+enter value to push
+4
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+6
+4 
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+3
+4 is the peek element
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+1
+enter value to push
+6
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+2
+6 is the popped element
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
+6
+4 
+1-push
+2-pop
+3-peek
+4-isempty
+5-isfull
+6print
+7-exit
+enter choice
