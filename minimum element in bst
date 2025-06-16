@@ -1,0 +1,13 @@
+  int minValue(Node* root) {
+        // Code her
+        int mini=INT_MAX;
+       while(root!=NULL){
+           if(root->data<=mini){
+               mini=root->data;
+               root=root->left;
+           }
+           else
+           root=root->right;
+       }
+       return mini;
+    }
