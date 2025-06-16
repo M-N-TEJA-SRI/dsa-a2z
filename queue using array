@@ -1,0 +1,173 @@
+#include <iostream>
+int queue[5],front=-1,back=-1,length=5;
+using namespace std;
+void isfull(){
+    if(back+1==length)
+    cout<<"overflow\n";
+    else
+    cout<<"no overflow\n";
+}
+void isempty(){
+    if(front==-1&&back==-1)
+    cout<<"underflow\n";
+    else
+    cout<<"no underflow\n";
+}
+void front_num(){
+    if(front==-1)
+    cout<<"-1 is the front\n";
+    else
+    cout<<queue[front]<<" is the front\n";
+}
+void back_num(){
+    if(back==-1)
+    cout<<"-1 is the back\n";
+    else
+    cout<<queue[back]<<" is the back\n";
+}
+void print(){
+    if(front==-1)
+    cout<<-1<<"\n";
+    else{
+        int i;
+        for(i=front;i<=back;i++){
+            cout<<queue[i]<<" ";
+        }
+        cout<<"\n";
+    }
+}
+void enqueue(int x){
+    if(back+1==length)
+    cout<<"overflow\n";
+    else if(front==-1&&back==-1){
+        front=0;
+        back=0;
+        queue[front]=x;
+         cout<<"enqueued\n";
+    }
+    else{
+    queue[++back]=x;
+     cout<<"enqueued\n";
+    }
+}
+void dequeue(){
+    if(front==-1)
+    cout<<"cannot delete underflow\n";
+    else if(front==back){
+        cout<<queue[front]<<" is the dequeued element\n";
+        front=-1;
+        back=-1;
+    }
+    else
+    cout<<queue[++front]<<" is the dequeued element\n";
+}
+int main() {
+   int n=-1,x;
+   while(n!=9){
+       cout<<"1-enqueue\n2-dequeue\n3-print\n4-isfull\n5-isempty\n6-front_num\n7-back_num\n8-exit\n";
+       cin>>n;
+       switch(n){
+           case 1:
+           cout<<"enter number to enqueue\n";
+           cin>>x;
+           enqueue(x);
+           break;
+           case 2:
+           dequeue();
+           break;
+           case 3:
+           print();
+           break;
+           case 4:
+           isfull();
+           break;
+           case 5:
+           isempty();
+           break;
+           case 6:
+           front_num();
+           break;
+           case 7:
+           back_num();
+           break;
+           case 8:
+           cout<<"exit\n";
+           break;
+       }
+   }
+
+    return 0;
+}
+output
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+1
+enter number to enqueue
+3
+enqueued
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+1
+enter number to enqueue
+4
+enqueued
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+3
+3 4 
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+6
+3 is the front
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+7
+4 is the back
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
+2
+4 is the dequeued element
+1-enqueue
+2-dequeue
+3-print
+4-isfull
+5-isempty
+6-front_num
+7-back_num
+8-exit
