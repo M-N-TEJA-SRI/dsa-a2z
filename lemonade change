@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+int main() {
+   int n,i,flag=1,f=0,te=0,tw=0;
+   cin>>n;
+   int a[n];
+   for(i=0;i<n;i++){
+       cin>>a[i];
+       if(a[i]==5){
+           f++;
+       }
+       else if(a[i]==10){
+           if(f<1)
+           {
+               flag=0;
+               break;
+           }
+           else{
+               te++;
+               f--;
+           }
+       }
+       else {
+           if(f<1||te<1){
+               if(f<3){
+                   flag=0;
+                   break;
+               }
+               else{
+                   tw++;
+                   f-=3;
+               }
+           }
+           else{
+               tw++;
+               f--;
+               te--;
+           }
+       }
+   }
+   cout<<flag;
+   
+    return 0;
+}
+output
+4  
+5 10 20 20
+0
