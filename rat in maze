@@ -1,0 +1,36 @@
+//whether path exists or not
+#include <iostream>
+#include<vector>
+using namespace std;
+bool rat(vector<vector<int>>&v,int n,int m,int i,int j){
+    if(i<0||j<0||i>=n||j>=m||v[i][j]==0||v[i][j]==2)
+    return false;
+    else if(i==n-1&&j==m-1)
+    return true;
+    v[i][j]=2;
+    return rat(v,n,m,i-1,j)||rat(v,n,m,i,j+1)||rat(v,n,m,i,j-1)||rat(v,n,m,i+1,j);
+}
+int main() {
+    int n,m,x,y;
+    cin>>n>>m;
+    vector<vector<int>>v(n,vector<int>(m));
+    int i,j;
+   for(i=0;i<n;i++){
+       for(j=0;j<m;j++){
+           cin>>v[i][j];
+       }
+   }
+   if(v[0][0]==0)
+   cout<<"not possible";
+   else
+   cout<<rat(v,n,m,0,0);
+    return 0;
+}
+/*output
+4 4
+1 0 1 1
+1 1 1 0
+0 0 1 1
+1 1 0 1
+1
+*/
