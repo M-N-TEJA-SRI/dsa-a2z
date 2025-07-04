@@ -22,7 +22,8 @@ int main() {
   cout<<ans;
     return 0;
 }
-output
+/*output
 6 4
 1 2 3 4 5 0
 3
+*/
