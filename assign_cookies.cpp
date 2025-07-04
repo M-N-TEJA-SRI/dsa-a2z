@@ -26,8 +26,10 @@ int main() {
   cout<<c;
     return 0;
 }
+/*
 output
 2 3
 8 9
 2 3 4
 2
+   */
