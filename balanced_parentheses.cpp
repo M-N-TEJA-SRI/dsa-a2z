@@ -20,6 +20,7 @@ int main() {
    cout<<"not valid\n";
     return 0;
 }
-output
+/*output
 ([])
 valid parentheses
+*/
