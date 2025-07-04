@@ -42,7 +42,7 @@ int main() {
 }
     return 0;
 }
-output
+/*output
 5 3
 1 2 8 4 9
-3
+3*/
