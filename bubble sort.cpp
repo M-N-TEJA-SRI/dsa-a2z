@@ -18,7 +18,7 @@ int main() {
   }
     return 0;
 }
-output
+/*output
 4
 2 2 4 1
-1 2 2 4 
+1 2 2 4 */
