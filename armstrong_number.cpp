@@ -15,6 +15,7 @@ int main() {
 cout<<arm(n);
     return 0;
 }
-output
+/*output
 154
 0
+*/
